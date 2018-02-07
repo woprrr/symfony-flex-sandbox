@@ -22,12 +22,9 @@ class UserController extends Controller
         $user->setEmail('xxx@gmail.com');
         $user->setPassword('xxxx');
 
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
         $em->persist($user);
-
-        // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return new Response('Saved new product with id '.$user->getId());
+        return new Response('Saved new User with id '.$user->getId());
     }
 }
